@@ -65,6 +65,8 @@ bool ShellWidget::setShellFont(const QFont& font, bool force) noexcept
 	}
 
 	if (!force) {
+    // ignoring this for now, since it's a false positive for SauceCodePro
+    /*
 		if (!fi.fixedPitch()) {
 			emit fontError(QString("%1 is not a fixed pitch font").arg(font.family()));
 			return false;
@@ -73,6 +75,7 @@ bool ShellWidget::setShellFont(const QFont& font, bool force) noexcept
 		if (isBadMonospace(font)) {
 			emit fontError(QString("Warning: Font \"%1\" reports bad fixed pitch metrics").arg(font.family()));
 		}
+    */
 	}
 
 	setFont(font);
